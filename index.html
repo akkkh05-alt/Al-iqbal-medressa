@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>My Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app" aria-labelledby="page-title">
+    <header class="header">
+      <div>
+        <p class="eyebrow">A little more focus</p>
+        <h1 id="page-title">My tasks<span class="title-dot">.</span></h1>
+        <p class="subtitle">Capture what matters. Take it one step at a time.</p>
+      </div>
+      <div class="date-badge" aria-label="Your personal task list">✓ <span>YOUR SPACE</span></div>
+    </header>
+
+    <form class="add-form" id="task-form">
+      <label class="visually-hidden" for="task-input">Add a task</label>
+      <input id="task-input" name="task" type="text" maxlength="200" placeholder="What needs to get done?" autocomplete="off" required>
+      <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add task</button>
+    </form>
+
+    <section class="task-card" aria-label="Tasks">
+      <div class="toolbar">
+        <p class="task-count" id="task-count" aria-live="polite">0 tasks left</p>
+        <nav class="filters" aria-label="Filter tasks">
+          <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="filter" data-filter="completed" aria-pressed="false">Completed</button>
+        </nav>
+      </div>
+      <ul class="task-list" id="task-list" aria-label="Your task list"></ul>
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon" aria-hidden="true">✦</div>
+        <h2 id="empty-title">A fresh start</h2>
+        <p id="empty-message">Add a task above and make today count.</p>
+      </div>
+      <footer class="list-footer">
+        <span id="total-count">0 tasks total</span>
+        <button type="button" class="clear-button" id="clear-completed">Clear completed</button>
+      </footer>
+    </section>
+    <p class="privacy-note"><span aria-hidden="true">▣</span> Your tasks are saved on this device.</p>
+  </main>
+</body>
+</html>
